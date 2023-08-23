@@ -1,0 +1,75 @@
+/* The outer div */
+.outer-div {
+    margin: 5% 17% 5% 17%;
+}
+
+/* Title and Red-Black Line */
+.title-and-hr-container {
+    position: relative;
+    display: inline-block;
+}
+
+.title {
+    font-family: 'Krona One';
+    font-size: 36px;
+
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+
+    text-align: justify;
+}
+
+.red-hr {
+    width: 25%;
+
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+
+    position: absolute;
+    bottom: 0;
+}
+
+/* Link and Sentiment */
+.link-and-sentiment {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 2%;
+}
+
+.link {
+    font-style: italic;
+    font-size: 24;
+}
+
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: blue;
+}
+a:active {
+    color: hotpink;
+}
+
+.sentiment {
+    font-style: italic;
+    font-size: 24;   
+}
+
+/* News body */
+.new-body {
+    padding: 7% 7% 0% 7%;
+
+    font-size: 24; 
+    text-align: justify;
+    text-indent: 7%;
+}
