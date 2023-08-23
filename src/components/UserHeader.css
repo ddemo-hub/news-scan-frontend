@@ -1,0 +1,118 @@
+.header {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 100px;
+    right: 100px;
+    z-index: 100;
+    border-bottom-style:solid;
+    background-color: white;
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+    
+    
+}
+
+.left-section {
+    position:relative;
+    display: flex;
+    font-size: 30px;
+    padding-left: 5px;
+    padding-right:5px;
+    margin-top: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+    margin-bottom: -2px;
+    border-bottom-width: 2px;
+}
+
+.middle-section {
+    align-items: center;
+    flex:1 ;
+    display:flex; 
+    max-width: 500px;
+}
+
+.calendar-button {
+    height:40px;
+    background-color: white;
+    border-style: hidden;
+    cursor: pointer;
+}
+
+.calendar-icon {
+    height:35px
+}
+.searchbox {
+    display: flex;
+    height:36px;
+    width: 200px;
+    border-style:solid;
+    border-radius: 36px;
+    flex:1;
+    padding-right:12px;
+    border-width:0.2px;
+
+}
+.search-button {
+    
+    cursor:pointer;
+    background-color: white;
+    height:36px;
+    border:none;
+    border-radius: 36px;
+    }
+
+.search-icon {
+    height: 25px
+
+}
+
+.search-bar {
+    position:flex;
+    font-size: 18px;
+    border: none;
+    flex:1;
+    outline: none;
+}
+
+.right-section {
+    padding-top: 15px;
+    width:250px;
+    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    
+}
+
+.right-section > button {
+    height: 25px;
+    width: 50px;
+    border-radius: 25px;
+    color: white;
+    border:none;
+    outline:none;
+    font-weight: bold;
+    
+}
+
+.per-button {
+    background-color: rgb(211, 85, 127);
+}
+
+.loc-button {
+    background-color: rgb(146, 32, 223);
+}
+
+.org-button {
+    background-color: rgb(21, 117, 21);
+}
+
+.misc-button {
+    background-color: rgb(24, 35, 192);
+}
