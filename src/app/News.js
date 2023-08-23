@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import './News.css';
 
 function News() {
+    const navigate = useNavigate()
     const { title } = useParams()
     const [newsData, setNewsData] = useState([])
 
@@ -34,31 +35,48 @@ function News() {
     }
 
     return (
-        <div className="outer-div">
-            <div className="title-and-hr-container">
-                <h1 className="title"> {title} </h1>
-                <div className="red-hr" /> 
+        <div>
+        
+            <div className="newsgpt-header" style={{textAlign: "center"}}>
+                NewsGPT
             </div>
 
-            <div className="link-and-sentiment">
-                <div className="link">
-                    <a href={newsData.link}> {title} | ({parseURL()}) </a>
+            <div className="outer-div">
+
+                <div className="title-and-hr-container">
+                    <h1 className="title"> {title} </h1>
+                    <div className="red-hr" /> 
                 </div>
-                <div className="sentiment">
-                    {parseSentiment()}
+
+                <div className="link-and-sentiment">
+                    <div className="link">
+                        <a href={newsData.link}> {title} | ({parseURL()}) </a>
+                    </div>
+                    <div className="sentiment">
+                        {parseSentiment()}
+                    </div>
                 </div>
+
+                {
+                    (newsData.body === undefined) ? "" : newsData.body.map((newsBody) => {
+                        return (
+                            <div className='news-body'>
+                                {
+                                    newsBody.split('. ').map((sentence) => {
+                                        return (newsData.summary.includes(sentence)) ? <span><span style={{backgroundColor: "yellow"}}>{sentence}.</span> </span> : <span>{sentence}. </span>
+                                    })
+                                }
+                            </div>    
+                        )
+                    })
+                }
+
+                <div style={{textAlign: "center"}}>
+                    <button className='return-to-main' onClick={() => navigate("/brief")}> Main Page </button>
+                </div>
+
             </div>
 
-            <div className='new-body'>
-                {newsData.body}
-            </div>
-            <div className='new-body' style={{padding: "3% 7% 0% 7%"}}>
-                {newsData.body}
-            </div>
-            <div className='new-body' style={{padding: "3% 7% 0% 7%"}}>
-                {newsData.body}
-            </div>
-            
         </div>
     );
 }
