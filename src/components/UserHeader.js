@@ -5,6 +5,7 @@ import calendarIcon from './icon_images/calendar-icon.svg'
 
 function UserHeader() {
     return (
+     
     <header class="header">    
       <div class="left-section">
         NewsGPT
@@ -12,11 +13,11 @@ function UserHeader() {
       </div>
       <div class="middle-section">
         <button class='calendar-button'>
-          <img class='calendar-icon' src={calendarIcon}></img>   
+          <img class='calendar-icon' src={calendarIcon} alt=""></img>   
         </button>
         <div class='searchbox'>
           <button class='search-button'>
-          <img class='search-icon' src={searchIcon}></img>
+          <img class='search-icon' src={searchIcon} alt=""></img>
           </button>
           <input class= 'search-bar' type="text"></input>
         </div>  
@@ -28,9 +29,10 @@ function UserHeader() {
         <button class = "misc-button">MISC</button>
       </div>          
     </header>
+    
 
 
     );
 }
 
-export default UserHeader
+export default UserHeader;

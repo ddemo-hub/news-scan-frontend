@@ -98,6 +98,7 @@
     border:none;
     outline:none;
     font-weight: bold;
+    cursor: pointer;
     
 }
 
@@ -116,3 +117,5 @@
 .misc-button {
     background-color: rgb(24, 35, 192);
 }
+
+
