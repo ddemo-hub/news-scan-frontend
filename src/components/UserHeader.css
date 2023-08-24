@@ -38,6 +38,7 @@
 }
 
 .calendar-button {
+    padding-right: 10px;
     height:40px;
     background-color: white;
     border-style: hidden;
@@ -47,6 +48,15 @@
 .calendar-icon {
     height:35px
 }
+
+.calendar-button:hover{
+    height:42px
+}
+
+.calendar-button:hover .calendar-icon{
+    height:40px
+}
+
 .searchbox {
     display: flex;
     height:36px;
@@ -56,8 +66,16 @@
     flex:1;
     padding-right:12px;
     border-width:0.2px;
+    transition: border-color 0.2s;
+    transition: box-shadow 0.2s;
 
 }
+
+.searchbox:hover{
+    border-color:grey;
+    box-shadow: 0 1px 6px rgba(32 33 36 0.28);
+}
+
 .search-button {
     
     cursor:pointer;
@@ -65,6 +83,8 @@
     height:36px;
     border:none;
     border-radius: 36px;
+    
+    
     }
 
 .search-icon {
@@ -76,8 +96,10 @@
     position:flex;
     font-size: 18px;
     border: none;
-    flex:1;
+    flex:0.95;
     outline: none;
+    
+    
 }
 
 .right-section {
