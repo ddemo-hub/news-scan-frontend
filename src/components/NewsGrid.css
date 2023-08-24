@@ -4,7 +4,7 @@
     margin-right: 100px ;
     border-top: 1px solid gray;
     display: grid;
-    grid-template-columns: 0.75fr 2fr 0.75fr;
+    grid-template-columns: 0.75fr 2fr 0.7fr;
  
 }
 
@@ -24,7 +24,7 @@
     position: sticky;
     margin-top: 20px;
     margin-left: -1px;
-    height:80vh;
+    height:100vh;
 }
 
 .news-entry {
@@ -58,14 +58,15 @@
 }
 
 .stats-entry{
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     margin-left:20px;
     margin-right: 20px;
+    margin-top: -40px;
 }
 
 .stats-title{
-    font-size: 40px;
-    color:rgb(107, 19, 19);
+    font-size: 35px;
+    color:rgb(202, 70, 70);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     border-bottom: 2px solid black;
@@ -73,6 +74,21 @@
 
 .stats-contents{
     border-bottom: 1px solid gray;
+    
 }
 
+.stats-subjects{
+    font-weight: bold;
+    font-size: 20px;
 
+}
+
+.stats-article{
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.boldpart{
+    font-weight: bold;
+
+}
