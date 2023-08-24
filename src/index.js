@@ -12,7 +12,7 @@ import News from './app/News';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello World</div>
+    element: <div>Hello World</div>     // Temp path for testing
   },
   {
     path: "/brief/:date?/:keyword?",

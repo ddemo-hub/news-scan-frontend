@@ -83,6 +83,12 @@ a:active {
     line-height: 150%;
 }
 
+.summary {
+    background-color: rgb(255, 255, 150);
+    
+    padding: 0px 3px 0px 3px;
+}
+
 /* Return to Main Page */
 .return-to-main {
     margin-top: 15%;
