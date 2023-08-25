@@ -7,8 +7,8 @@ function NewEntry({ title, body, id }) {
       <p className='news-title'>{title}</p>
       <p className='news-teaser'>{body}</p>
       <div className="Date-Sentiment">
-        <div className='news-date'>- August 23, 2023   </div>
-        <div className='sentiment-data'>Sentiment: Positive </div>
+        <div className='news-date'>- August 23,2023 </div>
+        <div className='sentiment-data'> Sentiment : Positive </div>
       </div>  
     </div>
   );
@@ -18,7 +18,7 @@ function NewEntry({ title, body, id }) {
 function NewsEntry() {
 
   const [posts, setPosts] = useState([]);
-  const numEntries = 6;
+
   const url = 'https://jsonplaceholder.typicode.com/posts';
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function NewsEntry() {
       .then((res) => res.json())
       .then((data) => setPosts(data));
   }, []);
-
+  const numEntries = 6;
   return (
     <div>
       {posts.slice(0, Math.min(posts.length, numEntries)).map((post) => (
@@ -34,7 +34,8 @@ function NewsEntry() {
           key={post.id}
           title={post.title}
           body={post.body}
-          id={post.id}
+          date = {post.date}
+          sentiment = {post.sentiment}
         />
       ))}
     </div>
