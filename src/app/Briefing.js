@@ -1,8 +1,11 @@
-import './App.css';
+import './Briefing.css';
+
 import React from 'react';
+
 import UserHeader from '../components/UserHeader';
 import NewsGrid from '../components/NewsGrid'
-function App() {
+
+function Briefing() {
   return (
   <body>   
     <div><UserHeader /></div>
@@ -11,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default Briefing;

@@ -1,0 +1,116 @@
+/* NewsGPT text */
+.newsgpt-header {
+    margin: 5% 0% 0% 0%;
+
+    font-family: "Bonheur Royale";
+    font-size: 128px;   
+}
+
+/* The outer div */
+.outer-div {
+    margin: 5% 17% 5% 17%;
+}
+
+/* Title and Red-Black Line */
+.title-and-hr-container {
+    position: relative;
+}
+
+.title {
+    font-family: 'Krona One';
+    font-size: 36px;
+
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+
+    text-align: justify;
+}
+
+.red-hr {
+    width: 25%;
+
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+
+    position: absolute;
+    bottom: 0;
+}
+
+/* Link and Sentiment */
+.link-and-sentiment {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 2%;
+    margin-bottom: 5%;
+}
+
+.link {
+    font-style: italic;
+    font-size: 14px; 
+}
+
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: blue;
+}
+a:active {
+    color: hotpink;
+}
+
+.sentiment {
+    font-style: italic;
+    font-size: 14px; 
+}
+
+/* News body */
+.news-body {
+    padding: 2% 7% 0% 7%;
+
+    font-size: 16px; 
+    text-align: justify;
+    text-indent: 7%;
+    line-height: 150%;
+}
+
+.summary {
+    background-color: rgb(255, 255, 150);
+    
+    padding: 0px 3px 0px 3px;
+}
+
+/* Return to Main Page */
+.return-to-main {
+    margin-top: 15%;
+    padding: 1% 4% 1% 4%;
+    
+    font-size: 18px;
+    font-weight: bold;
+
+    background-color: white;
+
+    border: 3px solid #000000;
+    border-radius: 90px 90px 90px 90px;
+    -webkit-border-radius: 90px 90px 90px 90px;
+    -moz-border-radius: 90px 90px 90px 90px;
+
+    display: inline-block;
+
+    transition: background 0.25s ease-in-out;
+}
+
+.return-to-main:hover {
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+    transition: background 0.25s ease-in-out;
+}

@@ -1,13 +1,33 @@
+import reportWebVitals from './reportWebVitals';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
 import './index.css';
-import App from './app/App';
-import reportWebVitals from './reportWebVitals';
+
+import Briefing from './app/Briefing';
+import News from './app/News';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello World</div>     // Temp path for testing
+  },
+  {
+    path: "/brief/:date?/:keyword?",
+    element: <Briefing />
+  },
+  {
+    path:"/news/:title",
+    element: <News />
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
