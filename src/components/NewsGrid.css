@@ -62,9 +62,21 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.Date-Sentiment{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 .news-date{
     color: orangered;
-    
+    justify-self: start; 
+}
+
+.sentiment-data{
+
+    margin-bottom: 0;
+    justify-self: end;
+    color: rgb(255, 0, 0);
 }
 
 
@@ -103,3 +115,4 @@
     font-weight: bold;
 
 }
+

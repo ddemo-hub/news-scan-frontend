@@ -12,6 +12,9 @@ function UserHeader() {
 
       </div>
       <div class="middle-section">
+ 
+      </div>
+      <div class="right-section">
         <button class='calendar-button'>
           <img class='calendar-icon' src={calendarIcon} alt=""></img>   
         </button>
@@ -20,13 +23,7 @@ function UserHeader() {
           <img class='search-icon' src={searchIcon} alt=""></img>
           </button>
           <input class= 'search-bar' type="text"></input>
-        </div>  
-      </div>
-      <div class="right-section">
-        <button class = "per-button">PER</button>
-        <button class = "loc-button">LOC</button>
-        <button class = "org-button">ORG</button>
-        <button class = "misc-button">MISC</button>
+        </div> 
       </div>          
     </header>
     

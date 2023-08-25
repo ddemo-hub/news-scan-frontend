@@ -1,22 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './NewsGrid.css'
 
+function NewEntry({ title, body, id }) {
+  return (
+    <div className='news-entry'>
+      <p className='news-title'>{title}</p>
+      <p className='news-teaser'>{body}</p>
+      <div className="Date-Sentiment">
+        <div className='news-date'>- August 23, 2023   </div>
+        <div className='sentiment-data'>Sentiment: Positive </div>
+      </div>  
+    </div>
+  );
+}
 
 
 function NewsEntry() {
-    return(
-        <div class='news-entry'>
-        <p class= 'news-title'>
-          Icardi Trabzonspor'a 2 tane tıklattı
-        </p>
-        <p class='news-teaser'>
-          Ünlü Arjantinli golcü Mauro Emmanuel Icardi Trabzonspor karşısında iki gol atarak, etkileyici bir performans sergiledi
-        </p>
-        <p class='news-date'>
-          -August 23,2023
-        </p>
-      </div>
-    );
+
+  const [posts, setPosts] = useState([]);
+  const numEntries = 6;
+  const url = 'https://jsonplaceholder.typicode.com/posts';
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setPosts(data));
+  }, []);
+
+  return (
+    <div>
+      {posts.slice(0, Math.min(posts.length, numEntries)).map((post) => (
+        <NewEntry
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          id={post.id}
+        />
+      ))}
+    </div>
+  );
 }
+
+    
 
 export default NewsEntry;

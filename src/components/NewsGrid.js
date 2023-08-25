@@ -8,27 +8,17 @@ function NewsGrid() {
     return(
         <div class='NewsGrids'>
           <div class='left-part'>
-
-            <NewsStats />
+            
+            <NewsTopics />
           
-          </div>
-
-          
-    
+          </div>              
           <div class='middle-part'>
             <NewsEntry />
-            <NewsEntry />
-            <NewsEntry />
-            <NewsEntry />
-            <NewsEntry />
-            <NewsEntry />
-            <NewsEntry />
-            <NewsEntry />
+
           </div>
           <div class='right-part'>
-            <NewsTopics />
-
             
+            <NewsStats />          
           </div>  
         </div>
 
