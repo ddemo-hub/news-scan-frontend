@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
+import NewsGPTHeader from '../components/NewsGPTHeader';
 import './News.css';
 
 function News() {
@@ -42,12 +43,10 @@ function News() {
 
     return (
         <div>
-        
-            <div className="newsgpt-header" style={{textAlign: "center"}}>
-                NewsGPT
-            </div>
 
-            <div className="outer-div">
+            <NewsGPTHeader />
+
+            <div className="news-outer-div">
 
                 <div className="title-and-hr-container">
                     <h1 className="title"> {title} </h1>
@@ -74,7 +73,7 @@ function News() {
                                     paragraphSentences.map((sentence, si) => {          // For every sentence in the paragraph
                                         return (
                                             (summarySentences.includes(sentence)) ?     // Check if the sentence is present in the summary  
-                                            <span key={`${pi}-${si}`}><span key={`${pi}-${si}-in`} class="summary">{sentence}</span> </span> : // If the sentence is present in the summary, highlight it
+                                            <span key={`${pi}-${si}`}><span key={`${pi}-${si}-in`} className="summary">{sentence}</span> </span> : // If the sentence is present in the summary, highlight it
                                             <span key={`${pi}-${si}`}>{sentence} </span> // If the sentence is not present in the summary, do not highlight it
                                         )
                                     })
@@ -85,7 +84,7 @@ function News() {
                 }
 
                 <div style={{textAlign: "center"}}>
-                    <button className='return-to-main' onClick={() => navigate("/brief")}> Main Page </button>
+                    <button className='return-to-main' onClick={() => navigate("/brief/daily")}> Main Page </button>
                 </div>
 
             </div>

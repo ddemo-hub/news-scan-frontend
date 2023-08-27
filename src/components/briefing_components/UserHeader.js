@@ -1,7 +1,7 @@
 import React from "react";
 import './UserHeader.css'
-import searchIcon from './icon_images/search-icon.svg'
-import calendarIcon from './icon_images/calendar-icon.svg'
+import searchIcon from '../icon_images/search-icon.svg'
+import calendarIcon from '../icon_images/calendar-icon.svg'
 
 function UserHeader() {
     return (

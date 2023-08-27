@@ -1,0 +1,20 @@
+.trend-entry {
+	margin-top: 20%;
+}
+
+.trend-head {
+	font-size: 30px;
+}
+
+.list-item {
+	font-size: 18px;
+	font-style: italic;
+
+	padding-bottom: 3%;
+	
+}
+.list-item:hover {
+	text-decoration: underline;
+	
+	cursor: pointer;
+}

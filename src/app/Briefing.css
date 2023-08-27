@@ -1,4 +1,54 @@
-.App {
-  text-align: center;
+/* The outer div */
+.briefing-outer-div {
+	margin: 2.5% 10% 5% 10%;	
 }
 
+
+
+.flex-display {
+	margin-top: 5%;
+	padding-top: 1%;
+
+	border-top-width: 1px;
+	border-top-color: black;
+	border-top-style: solid;
+
+	display: flex;
+}
+
+
+.trends {
+	flex: 1;
+	
+	border-right-width: 1px;
+	border-right-color: black;
+	border-right-style: solid;
+
+	margin-right: 2.5%;
+}
+
+.trends-h1 {
+    font-family: Krona One;
+    font-size: 40px;
+	color: #AD0D0D;
+
+	width: 90%;
+}
+
+
+.news {
+	flex: 2;
+
+	margin-top: 2.5%;
+}
+
+
+.stats {
+	flex: 1;
+
+	border-left-width: 1px;
+	border-left-color: black;
+	border-left-style: solid;
+
+	padding-left: 2.5%;
+}

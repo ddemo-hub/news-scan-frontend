@@ -7,7 +7,7 @@
 }
 
 /* The outer div */
-.outer-div {
+.news-outer-div {
     margin: 5% 17% 5% 17%;
 }
 
@@ -25,17 +25,20 @@
     
     border-bottom-width: 3px;
     border-bottom-style: solid;
-    border-bottom-color: black;
+    border-bottom-color: red;
 
+    display: inline-block;
     text-align: justify;
 }
 
 .red-hr {
-    width: 25%;
+    z-index: -1;
+
+    width: 100%;
 
     border-bottom-width: 3px;
     border-bottom-style: solid;
-    border-bottom-color: red;
+    border-bottom-color: black;
 
     position: absolute;
     bottom: 0;

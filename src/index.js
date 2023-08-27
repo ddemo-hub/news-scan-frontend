@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <div>Hello World</div>     // Temp path for testing
   },
   {
-    path: "/brief/:date?/:keyword?",
+    path: "/brief/:query",
     element: <Briefing />
   },
   {

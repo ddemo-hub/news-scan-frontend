@@ -1,0 +1,99 @@
+.navbar { 
+    position: relative;
+}
+
+
+.briefing { 
+    font-family: Krona One;
+    font-size: 36px;
+
+    padding-bottom: 0.5%;
+    margin-bottom: 0%;
+
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+    
+    display: inline-block;
+    text-align: justify;
+}
+
+
+.calendar-button {
+    height: 35px;
+
+    border-style: hidden;
+    background-color: white;
+    
+    cursor: pointer;
+
+    pointer-events: none;
+
+    position: absolute;
+    right: 21.75%;
+    bottom: 17%;
+
+    margin-left: 15%;
+
+    z-index: 1;
+}
+
+.date-input {
+    position: absolute; 
+    
+    opacity: 0;
+    
+    font-size: 190%;
+
+    right: 21.75%;
+    bottom: 17%;
+
+    width: 27px;
+    margin-right: 10px;
+}
+
+
+.keyword {
+    position: absolute; 
+
+    font-weight: bold;
+    font-style: Krona One;
+    font-size: 16px;
+
+    right: 0%;
+    bottom: 12%;
+
+    height: 30px;
+    width: 20%;
+
+    padding-left: 0.75%;
+
+    border: 3px solid #000000;
+    border-radius: 90px 90px 90px 90px;
+    -webkit-border-radius: 90px 90px 90px 90px;
+    -moz-border-radius: 90px 90px 90px 90px;
+}
+
+
+.black-hr { 
+    z-index: -1;
+
+    width: 100%;
+
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+
+    position: absolute;
+    bottom: 0;        
+}
+
+.light-hr {
+    width: 100%;
+
+    padding-top: 6%;
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
