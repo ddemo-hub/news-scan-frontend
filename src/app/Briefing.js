@@ -90,7 +90,30 @@ function Briefing() {
 					</div>
 
 					<div className='stats'>
-						Stats
+						{
+							(getBriefingType() === "daily") ?
+								<h1 className="trends-h1">Today's Stats</h1> :
+								(getBriefingType() === "date") ?
+									<h1 className="trends-h1">Stats for <span style={{fontStyle: "italic"}}>{new Date(query).toLocaleString('en-US', {day:'numeric', month: 'long', year: 'numeric'})}</span></h1>:
+									<h1 className="trends-h1"><span style={{fontStyle: "italic"}}>{query}'s</span> Stats</h1>
+						}
+						<div style={{borderBottomColor: "black", borderBottomWidth: "4px", borderBottomStyle: "solid", width: "90%"}} />
+						
+						<div style={{marginTop: "25%"}}/>
+
+						{
+							(briefingData.stats === undefined) ? "" : 
+							<div>
+								<h1 className='trend-head'>Sentiments:</h1>	
+								<ul style={{paddingLeft: "7.5%"}}>
+									<li><span style={{fontWeight: "bold"}}>{briefingData.stats.sentiment.positive.toFixed(2)}%</span> news are <span style={{fontWeight: "bold"}}>positive</span></li>
+									<li><span style={{fontWeight: "bold"}}>{briefingData.stats.sentiment.neutral.toFixed(2)}%</span> news are <span style={{fontWeight: "bold"}}>neutral</span></li>
+									<li><span style={{fontWeight: "bold"}}>{briefingData.stats.sentiment.negative.toFixed(2)}%</span> news are <span style={{fontWeight: "bold"}}>negative</span></li>
+								</ul>
+								<div className='seperator' />	
+							</div>
+						}
+
 					</div>
 				</div>
 

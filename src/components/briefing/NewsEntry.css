@@ -1,12 +1,16 @@
 .entry-title {
     margin-bottom: 0%;
-    transition: 0.25s;
+    transition: 0.1s;
+
+    cursor: pointer;
 }
 
 
 .ner-entry-title {
     font-size: 22px;
-    transition: 0.25s;
+    transition: 0.1s;
+
+    cursor: pointer;
 }
 
 .chatgpt-exp {

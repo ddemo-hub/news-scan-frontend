@@ -39,6 +39,7 @@ function NewsEntry(props) {
 	
 	return (
 		<div>
+			
 			<div onClick={ () => {setTitleIndex(prevState => (prevState + 1) % 2)} }>
 				{titles[titleIndex]}
 			</div>
@@ -55,9 +56,7 @@ function NewsEntry(props) {
 				&emsp;- {props.publish_date}
 			</p>
 
-			<div className='entry-seperator'>
-
-			</div>
+			<div className='entry-seperator' />
 			
 		</div>
 	)
