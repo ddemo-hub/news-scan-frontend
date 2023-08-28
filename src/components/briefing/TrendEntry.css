@@ -1,5 +1,5 @@
 .trend-entry {
-	margin-top: 20%;
+	margin-top: 15%;
 }
 
 .trend-head {
@@ -11,10 +11,19 @@
 	font-style: italic;
 
 	padding-bottom: 3%;
-	
 }
 .list-item:hover {
 	text-decoration: underline;
 	
 	cursor: pointer;
+}
+
+.seperator {
+	margin-top: 10%;
+
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+
+	width: 80%;
 }

@@ -21,14 +21,15 @@ function Navbar(props) {
 
             <div>
                 <button className='calendar-button'>
-                    <img className='calendar-icon' src={calendarIcon} alt=""></img>   
+                    <img className='calendar-icon' src={calendarIcon} alt="" />   
                 </button>
 
                 <input type="date" className='date-input' max={new Date().toJSON().slice(0, 10)} onChange={ event => props.navigator(`/brief/${event.target.value}`) } />
             </div>
 
             <div>
-                <input type="text" class="keyword" onKeyDown={ (event) => { if (event.key === "Enter") {props.navigator(`/brief/${event.target.value}`)} } }/>
+                <img className="search-icon" src={searchIcon} alt="" />
+                <input type="text" className="keyword" onKeyDown={ (event) => { if (event.key === "Enter") {props.navigator(`/brief/${event.target.value}`)} } }/>
             </div>
 
             <div className="black-hr" /> 

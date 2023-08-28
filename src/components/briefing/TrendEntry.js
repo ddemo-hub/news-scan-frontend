@@ -8,13 +8,15 @@ function Trends(props) {
             
             <h1 className='trend-head'>{props.trendHead}:</h1>
             
-            <ul>
+            <ul style={{paddingLeft: "7.5%"}}>
                 {
                     props.points.map((point) => {
                         return <li className='list-item' key={point} onClick={(event) => {props.navigator(`/brief/${event.target.innerText}`)}}>{point}</li>
                     })
                 }
             </ul>
+            
+            <div className='seperator' />
 
         </div>
     )

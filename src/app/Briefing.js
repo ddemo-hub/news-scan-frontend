@@ -4,6 +4,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import NewsGPTHeader from '../components/NewsGPTHeader';
 import Navbar from '../components/briefing/Navbar';
 import TrendEntry from '../components/briefing/TrendEntry'
+import NewsEntry from '../components/briefing/NewsEntry';
+
 import './Briefing.css';
 
 function Briefing() {
@@ -58,6 +60,8 @@ function Briefing() {
 						}
 						<div style={{borderBottomColor: "black", borderBottomWidth: "4px", borderBottomStyle: "solid", width: "90%"}} />
 						
+						<div style={{marginTop: "25%"}}/>
+
 						<TrendEntry trendHead="Trending Topics" points={(briefingData.trends === undefined) ? [] : briefingData.trends.trending_topics} navigator={navigate} />
 						<TrendEntry trendHead="Popular People & Groups" points={(briefingData.trends === undefined) ? [] : briefingData.trends.people_and_groups} navigator={navigate} />
 						<TrendEntry trendHead="Popular Firms" points={(briefingData.trends === undefined) ? [] : briefingData.trends.popular_firms} navigator={navigate} />
@@ -66,8 +70,23 @@ function Briefing() {
 						<TrendEntry trendHead="Hot Events" points={(briefingData.trends === undefined) ? [] : briefingData.trends.popular_events} navigator={navigate} />
 					</div>
 
-					<div className='news'>
-						News
+					<div className='news'>					
+						
+						{
+							(briefingData.news === undefined) ? "" : briefingData.news.map((entry, index) => {
+								return <NewsEntry 
+									key={index} 
+									title={entry.title} 
+									link={entry.link} 
+									teaser={entry.teaser} 
+									publish_date={entry.publish_date} 
+									namedEntities={entry.named_entities} 
+									chatgptExplanations={entry.chatgpt_explanations}
+									navigator={navigate} 
+								/>
+							})
+						}
+
 					</div>
 
 					<div className='stats'>

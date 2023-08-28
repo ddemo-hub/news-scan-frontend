@@ -1,0 +1,81 @@
+.entry-title {
+    margin-bottom: 0%;
+    transition: 0.25s;
+}
+
+
+.ner-entry-title {
+    font-size: 22px;
+    transition: 0.25s;
+}
+
+.chatgpt-exp {
+    z-index: 1;
+
+    border: 2px solid black;
+    border-radius: 90px 90px 90px 90px;
+    -webkit-border-radius: 90px 90px 90px 90px;
+    -moz-border-radius: 90px 90px 90px 90px;
+
+    padding: 0.5% 1.5% 0.5% 1.5%;
+
+    display: inline-block;
+
+    position: absolute;
+
+    background-color: white;
+
+    text-align: justify;
+
+    font-size: 12px;
+    font-weight: lighter;
+
+    line-height: 12px;
+
+    max-width: 25%;
+
+    opacity: 0;
+    transition: 0.15s;
+}   
+
+.entry-entity {
+    background: none;
+}
+.entry-entity:hover .chatgpt-exp:not(:hover) {
+    opacity: 100;
+    transition: 0.15s;
+}
+
+.entry-link {
+    font-style: italic;
+
+    text-decoration: none;
+
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+
+.entry-teaser {
+    text-align: justify;
+}
+.entry-teaser:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.entry-publish-date {
+    color: red;
+    opacity: 75%;
+
+    font-size: 12px;
+}
+
+
+.entry-seperator {
+    border-bottom: 1px black solid;
+
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
