@@ -12,10 +12,10 @@ import News from './app/News';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello World</div>     // Temp path for testing
+    element: <Briefing />
   },
   {
-    path: "/brief/:query",
+    path: "/brief/:query?",
     element: <Briefing />
   },
   {

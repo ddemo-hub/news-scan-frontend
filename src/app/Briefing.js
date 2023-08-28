@@ -10,7 +10,7 @@ import './Briefing.css';
 
 function Briefing() {
     const navigate = useNavigate();
-	const {query} = useParams();
+	const {query = "daily"} = useParams();
 	const [briefingData, setBriefingData] = useState({
 		news: undefined,
         trends: undefined,
@@ -70,8 +70,11 @@ function Briefing() {
 						<TrendEntry trendHead="Hot Events" points={(briefingData.trends === undefined) ? [] : briefingData.trends.popular_events} navigator={navigate} />
 					</div>
 
-					<div className='news'>					
-						
+					<div className='news'>			
+{/*
+						<h1 className="trends-h1" style={{textAlign: "center"}}>News</h1>
+						<div style={{borderBottomColor: "black", borderBottomWidth: "4px", borderBottomStyle: "solid", width: "100%", paddingBottom: "3.5%", marginBottom: "12.5%"}} />
+*/}
 						{
 							(briefingData.news === undefined) ? "" : briefingData.news.map((entry, index) => {
 								return <NewsEntry 
