@@ -14,18 +14,12 @@
 }
 
 .chatgpt-exp {
-    z-index: 1;
-
     border: 2px solid black;
     border-radius: 90px 90px 90px 90px;
     -webkit-border-radius: 90px 90px 90px 90px;
     -moz-border-radius: 90px 90px 90px 90px;
 
     padding: 0.5% 1.5% 0.5% 1.5%;
-
-    display: inline-block;
-
-    position: absolute;
 
     background-color: white;
 
@@ -38,6 +32,14 @@
 
     max-width: 25%;
 
+
+    z-index: 1;
+    
+    display: inline-block;
+
+    position: absolute;
+
+    visibility: hidden;
     opacity: 0;
     transition: 0.15s;
 }   
@@ -46,6 +48,7 @@
     background: none;
 }
 .entry-entity:hover .chatgpt-exp:not(:hover) {
+    visibility: visible;
     opacity: 100;
     transition: 0.15s;
 }

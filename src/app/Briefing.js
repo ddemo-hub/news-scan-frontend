@@ -83,7 +83,7 @@ function Briefing() {
 									link={entry.link} 
 									teaser={entry.teaser} 
 									publish_date={entry.publish_date} 
-									namedEntities={entry.named_entities} 
+									namedEntities={entry.ner_highlightings} 
 									chatgptExplanations={entry.chatgpt_explanations}
 									navigator={navigate} 
 								/>
