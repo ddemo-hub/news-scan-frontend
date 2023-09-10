@@ -26,6 +26,10 @@ function News() {
         .then((data) => setNewsData(data))
     }, [title]) // Re-send the request only if the title changes
 
+    const isLoading = () => {
+		return (newsData.body === undefined && newsData.link === undefined && newsData.sentiment === undefined && newsData.summary === undefined) ? true : false
+	}
+
     const parseSentiment = () => {
         if (newsData.sentiment === undefined) {
             return ""
@@ -42,54 +46,60 @@ function News() {
     }
 
     return (
-        <div>
+        <>       
+            {
+                isLoading() ? <div style={{position: "fixed", top: "40%", left: "33%", fontSize: "200px", fontFamily: "Bonheur Royale", transition: "1s"}}>Loading...</div> : ""
+            }
+            <div style={isLoading() ? {filter: "blur(8px)", transition: "0.5s"} : {filter: "none", transition: "0.5s"}}>
 
-            <NewsGPTHeader />
+                <NewsGPTHeader />
 
-            <div className="news-outer-div">
+                <div className="news-outer-div">
 
-                <div className="title-and-hr-container">
-                    <h1 className="title"> {title} </h1>
-                    <div className="red-hr" /> 
-                </div>
-
-                <div className="link-and-sentiment">
-                    <div className="link">
-                        <a href={newsData.link}> {title} | ({(newsData.link === undefined) ? "" : new URL(newsData.link).hostname}) </a>
+                    <div className="title-and-hr-container">
+                        <h1 className="title"> {title} </h1>
+                        <div className="red-hr" /> 
                     </div>
-                    <div className="sentiment">
-                        {parseSentiment()}
+
+                    <div className="link-and-sentiment">
+                        <div className="link">
+                            <a href={newsData.link}> {title} | ({(newsData.link === undefined) ? "" : new URL(newsData.link).hostname}) </a>
+                        </div>
+                        <div className="sentiment">
+                            {parseSentiment()}
+                        </div>
                     </div>
-                </div>
 
-                {
-                    (newsData.body === undefined) ? "" : newsData.body.map((paragraphBody, pi) => {     // For every paragraph in the body
-                        const paragraphSentences = paragraphBody.split(/(?<=[.!?])\s+/);    
-                        const summarySentences = newsData.summary.split(/(?<=[.!?])\s+/);  
+                    {
+                        (newsData.body === undefined) ? "" : newsData.body.map((paragraphBody, pi) => {     // For every paragraph in the body
+                            paragraphBody = paragraphBody.charAt(0).toUpperCase() + paragraphBody.slice(1);
+                            const paragraphSentences = paragraphBody.split(/(?<=[.!?])\s+/);    
+                            const summarySentences = newsData.summary.split(/(?<=[.!?])\s+/);  
 
-                        return (
-                            <div key={pi} className='news-body'>
-                                {
-                                    paragraphSentences.map((sentence, si) => {          // For every sentence in the paragraph
-                                        return (
-                                            (summarySentences.includes(sentence)) ?     // Check if the sentence is present in the summary  
-                                            <span key={`${pi}-${si}`}><span key={`${pi}-${si}-in`} className="summary">{sentence}</span> </span> : // If the sentence is present in the summary, highlight it
-                                            <span key={`${pi}-${si}`}>{sentence} </span> // If the sentence is not present in the summary, do not highlight it
-                                        )
-                                    })
-                                }
-                            </div>    
-                        )
-                    })
-                }
+                            return (
+                                <div key={pi} className='news-body'>
+                                    {
+                                        paragraphSentences.map((sentence, si) => {          // For every sentence in the paragraph
+                                            return (
+                                                (summarySentences.includes(sentence)) ?     // Check if the sentence is present in the summary  
+                                                <span key={`${pi}-${si}`}><span key={`${pi}-${si}-in`} className="summary">{sentence}</span> </span> : // If the sentence is present in the summary, highlight it
+                                                <span key={`${pi}-${si}`}>{sentence} </span> // If the sentence is not present in the summary, do not highlight it
+                                            )
+                                        })
+                                    }
+                                </div>    
+                            )
+                        })
+                    }
 
-                <div style={{textAlign: "center"}}>
-                    <button className='return-to-main' onClick={() => navigate("/brief/daily")}> Main Page </button>
+                    <div style={{textAlign: "center"}}>
+                        <button className='return-to-main' onClick={() => navigate("/brief/daily")}> Main Page </button>
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
+        </>
     );
 }
 

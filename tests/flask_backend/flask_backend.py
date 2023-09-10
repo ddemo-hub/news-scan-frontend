@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_cors import CORS
 import json
+import time
 
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:3000", "http://localhost:3000"])
@@ -15,13 +16,14 @@ def get_news_by_title():
     print("Request Data:", request_data)
 
     return_json = { 
-        "body": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat, eros eget lacinia ultrices, diam ipsum luctus ex, nec pulvinar risus odio sit amet diam. Nam et erat sollicitudin, luctus sem vitae, viverra libero. Etiam justo dui, commodo ac ex et, malesuada cursus massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In posuere risus sit amet urna ultrices, nec sollicitudin nisi aliquam. Integer ultricies lacus velit, et fermentum elit eleifend vitae. Vivamus aliquet venenatis mauris, ut finibus nibh vehicula ut. Morbi quis commodo augue. Pellentesque porttitor est a pretium commodo. Cras non nisl nec quam ornare fermentum ut nec est. Praesent commodo eget ex nec vulputate. Etiam a neque at dui vehicula consequat vitae varius arcu. Pellentesque nec eros vulputate, pulvinar tellus non, ullamcorper lorem. Pellentesque fringilla elit nec posuere efficitur. Suspendisse porttitor pretium magna in vestibulum. Pellentesque scelerisque erat id odio tincidunt accumsan. Pellentesque finibus semper odio id lobortis. In sapien augue, congue vel euismod sit amet, ornare vel nibh. Mauris eget faucibus ipsum, vitae gravida enim. Cras orci dui, ullamcorper vel turpis id, porta vestibulum enim. Nunc lectus mi, eleifend scelerisque finibus et, dignissim eget quam. Pellentesque volutpat orci a libero faucibus, sit amet rhoncus arcu dignissim."] * 5,
+        "body": ["lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat, eros eget lacinia ultrices, diam ipsum luctus ex, nec pulvinar risus odio sit amet diam. Nam et erat sollicitudin, luctus sem vitae, viverra libero. Etiam justo dui, commodo ac ex et, malesuada cursus massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In posuere risus sit amet urna ultrices, nec sollicitudin nisi aliquam. Integer ultricies lacus velit, et fermentum elit eleifend vitae. Vivamus aliquet venenatis mauris, ut finibus nibh vehicula ut. Morbi quis commodo augue. Pellentesque porttitor est a pretium commodo. Cras non nisl nec quam ornare fermentum ut nec est. Praesent commodo eget ex nec vulputate. Etiam a neque at dui vehicula consequat vitae varius arcu. Pellentesque nec eros vulputate, pulvinar tellus non, ullamcorper lorem. Pellentesque fringilla elit nec posuere efficitur. Suspendisse porttitor pretium magna in vestibulum. Pellentesque scelerisque erat id odio tincidunt accumsan. Pellentesque finibus semper odio id lobortis. In sapien augue, congue vel euismod sit amet, ornare vel nibh. Mauris eget faucibus ipsum, vitae gravida enim. Cras orci dui, ullamcorper vel turpis id, porta vestibulum enim. Nunc lectus mi, eleifend scelerisque finibus et, dignissim eget quam. Pellentesque volutpat orci a libero faucibus, sit amet rhoncus arcu dignissim."] * 5,
         "link": "https://bloomberg.com/new1",
         "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor est a pretium commodo. Nunc lectus mi, eleifend scelerisque finibus et, dignissim eget quam.",
         "sentiment": {"negative": 0.97, "neutral": 0.02, "positive": 0.01},
     }
     print(return_json)
 
+    time.sleep(10)
     return return_json
 
 
@@ -93,6 +95,7 @@ def get_briefings():
 
     print(return_json)
 
+    time.sleep(10)
     return return_json
 
 
