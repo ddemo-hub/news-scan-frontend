@@ -1,3 +1,31 @@
+.loading {
+	z-index: 1;
+
+	position: fixed;
+	
+	top: 35%; 
+	left: 31%; 
+
+	font-family: Roboto;	
+	font-size: 150px;
+	font-weight: 500;
+
+	transition: 1s;
+
+	animation-name: spin;
+	animation-duration: 2000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;   
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
 /* The outer div */
 .briefing-outer-div {
 	margin: 2.5% 10% 5% 10%;	

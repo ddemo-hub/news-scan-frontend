@@ -10,7 +10,10 @@ import './Briefing.css';
 
 function Briefing() {
     const navigate = useNavigate();
+	
 	const {query = "daily"} = useParams();
+
+	const [loading, setLoading] = useState(true);
 	const [briefingData, setBriefingData] = useState({
 		news: undefined,
         trends: undefined,
@@ -18,6 +21,8 @@ function Briefing() {
 	});
 
 	useEffect(() => {
+		setLoading(true);
+
         fetch(
             `${process.env.REACT_APP_SERVER_URL}/${process.env.REACT_APP_BRIEFING_ENDPOINT}`,  // Contruct the URL using the environment variables
             {
@@ -27,11 +32,9 @@ function Briefing() {
         )
         .then((res) => res.json())
         .then((data) => setBriefingData(data))
+		.then(() => setLoading(false))
 	}, [query]);
 
-	const isLoading = () => {
-		return (briefingData.news === undefined && briefingData.trends === undefined && briefingData.stats === undefined) ? true : false
-	}
 
 	const getBriefingType = () => {
         if (query === "daily" || query === new Date().toJSON().slice(0, 10)) {
@@ -49,9 +52,9 @@ function Briefing() {
 	return ( 
 		<>	
 			{
-				isLoading() ? <div style={{position: "fixed", top: "40%", left: "33%", fontSize: "200px", fontFamily: "Bonheur Royale", transition: "1s"}}>Loading...</div> : ""
+				loading ? <div className='loading'>Loading...</div> : ""
 			}
-			<div style={isLoading() ? {filter: "blur(8px)", transition: "0.5s"} : {filter: "none", transition: "0.5s"}}>
+			<div style={loading ? {filter: "blur(8px)", transition: "0.5s", pointerEvents: "none"} : {filter: "none", transition: "0.5s"}}>
 				<NewsGPTHeader />
 
 				<div className='briefing-outer-div'>

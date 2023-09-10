@@ -6,7 +6,10 @@ import './News.css';
 
 function News() {
     const navigate = useNavigate()
+
     const { title } = useParams()
+
+    const [loading, setLoading] = useState(false);
     const [newsData, setNewsData] = useState({
         body: undefined,        // The body of the new:                     (list[str]) every element in the list is a new paragraph
         link: undefined,        // Link to the original source of the new:  (str)
@@ -15,6 +18,8 @@ function News() {
     })
 
     useEffect(() => {
+        setLoading(true);
+
         fetch(
             `${process.env.REACT_APP_SERVER_URL}/${process.env.REACT_APP_NEWS_BY_TITLE_ENDPOINT}`,  // Contruct the URL using the environment variables
             {
@@ -24,11 +29,9 @@ function News() {
         )
         .then((res) => res.json())
         .then((data) => setNewsData(data))
+        .then(() => setLoading(false))
     }, [title]) // Re-send the request only if the title changes
 
-    const isLoading = () => {
-		return (newsData.body === undefined && newsData.link === undefined && newsData.sentiment === undefined && newsData.summary === undefined) ? true : false
-	}
 
     const parseSentiment = () => {
         if (newsData.sentiment === undefined) {
@@ -48,9 +51,9 @@ function News() {
     return (
         <>       
             {
-                isLoading() ? <div style={{position: "fixed", top: "40%", left: "33%", fontSize: "200px", fontFamily: "Bonheur Royale", transition: "1s"}}>Loading...</div> : ""
+                loading ? <div className='loading'>Loading...</div> : ""
             }
-            <div style={isLoading() ? {filter: "blur(8px)", transition: "0.5s"} : {filter: "none", transition: "0.5s"}}>
+            <div style={loading ? {filter: "blur(8px)", transition: "0.5s", pointerEvents: "none"} : {filter: "none", transition: "0.5s"}}>
 
                 <NewsGPTHeader />
 
