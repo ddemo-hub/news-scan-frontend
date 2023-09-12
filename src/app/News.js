@@ -42,7 +42,7 @@ function News() {
 
         return (
             <div>
-                <span style={{color: "red", fontWeight: "bold"}}>{newsData.sentiment[dominantSentiment] * 100}% </span> 
+                <span style={{color: "red", fontWeight: "bold"}}>{(newsData.sentiment[dominantSentiment] * 100).toFixed(2)}% </span> 
                 {dominantSentiment.charAt(0).toUpperCase() + dominantSentiment.slice(1)}
             </div>
         )

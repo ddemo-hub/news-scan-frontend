@@ -78,7 +78,7 @@ function Briefing() {
 							<TrendEntry trendHead="Popular Firms" points={(briefingData.trends === undefined) ? [] : briefingData.trends.popular_firms} navigator={navigate} />
 							<TrendEntry trendHead="Popular Places" points={(briefingData.trends === undefined) ? [] : briefingData.trends.popular_places} navigator={navigate} />
 							<TrendEntry trendHead="Popular Products" points={(briefingData.trends === undefined) ? [] : briefingData.trends.popular_products} navigator={navigate} />
-							<TrendEntry trendHead="Hot Events" points={(briefingData.trends === undefined) ? [] : briefingData.trends.popular_events} navigator={navigate} />
+							<TrendEntry trendHead="Hot Events" points={(briefingData.trends === undefined) ? [] : briefingData.trends.hot_events} navigator={navigate} />
 						</div>
 
 						<div className='news'>			
@@ -95,7 +95,7 @@ function Briefing() {
 										teaser={entry.teaser} 
 										publish_date={entry.publish_date} 
 										namedEntities={entry.ner_highlightings} 
-										chatgptExplanations={entry.chatgpt_explanations}
+										chatgptExplanations={entry.chatgpt_explanations[0]}
 										navigator={navigate} 
 									/>
 								})
